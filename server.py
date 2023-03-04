@@ -34,5 +34,4 @@ def bot_ai(audio):
     return chat_transcript
 
 if __name__ == "__main__":
-    
     ui = gr.Interface(fn=bot_ai, inputs=gr.Audio(source="microphone", type="filepath"), outputs="text").launch()
