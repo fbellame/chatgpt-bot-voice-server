@@ -23,11 +23,11 @@ def bot_ai(audio):
                     messages=messages
                     )
     
-    system_message = response["choices"][0]["message"]
-    messages.append(system_message)
+    assistant_message = response["choices"][0]["message"]
+    messages.append(assistant_message)
 
     reponse_file = "reponse-gpt3.mp3"
-    tts = gTTS(text=system_message["content"], lang= 'fr', slow=False, tld="fr")
+    tts = gTTS(text=assistant_message["content"], lang= 'fr', slow=False, tld="fr")
     tts.save(reponse_file)
 
     chat_transcript = ""
